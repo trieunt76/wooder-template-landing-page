@@ -1,0 +1,48 @@
+/* ----------- Grid Media Queries Breakpoints ----------- */
+$xxs-min: 576px; // Option change
+$xs-min: 768px; // No change
+$sm-min: 992px; // No change
+$md-min: 1200px; // No change
+$lg-min: 1600px; // Option change
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+/* -------------------- Boxed Layout -------------------- */
+$container-width: 1010px;
+$container-max-width: 1920px;
+
+/* ----------------------- Colors ----------------------- */
+$color-primary: #bea67c;
+$color-white: #fff;
+$color-black: #000;
+$color-dark-v1: #0e0e0e;
+$color-dark-v2: #050505;
+
+/* ------------------------ Fonts ----------------------- */
+$font-body: "PN-Regular", sans-serif;
+$font-bold: "PN-Bold", sans-serif;
+$font-exbold: "PN-ExtraBold", sans-serif;
+
+/* ---------------------- Font Size --------------------- */
+$fs-body: 1.6rem;
+
+$fs-heading-lv1: 8.4rem;
+$fs-heading-lv2: 4rem;
+$fs-heading-lv3: 1.8rem;
+
+$fs-text-lv1: 4.2rem;
+$fs-text-lv2: 1.6rem;
+$fs-text-lv3: 1.5rem;
+$fs-text-lv4: 1.4rem;
+
+/* --------------------- Text Color --------------------- */
+$tcl-primary: #bea67c;
+$tcl-white: #fff;
+$tcl-black: #000;
+$tcl-light: #b0b0b0;
+$tcl-dark: #010101;
+$tcl-body: #464646;
