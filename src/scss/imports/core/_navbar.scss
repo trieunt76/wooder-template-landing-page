@@ -1,0 +1,29 @@
+.menu {
+    @include position(fixed, $height-header, 0, 0, 0);
+    @include flexCenter();
+    flex-direction: column;
+    background-color: $color-black;
+    @include transform(translateX(-100%));
+    @include transition(all 0.3s $animation-cubic);
+    @include visible(true);
+    z-index: 600;
+    &__link {
+        @include text(
+            $font-bold,
+            $fs-text-lv3,
+            $tcl-white,
+            0.025rem,
+            uppercase
+        );
+        display: block;
+        padding: 1.6rem 0;
+    }
+}
+
+.open-menu {
+    .menu {
+        @include transform(translateX(0));
+        @include transition(all 0.3s $animation-cubic);
+        @include visible();
+    }
+}
