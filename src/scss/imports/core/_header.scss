@@ -1,0 +1,165 @@
+.header {
+    @include position(fixed, 0, null, null, 0);
+    @include size(100%, $height-header);
+    background-color: $color-black;
+    .container-fluid {
+        height: inherit;
+        @include flex(null, space-between, center);
+    }
+    .navbar {
+        @include flexCenter();
+        &__item {
+            padding: 0 3.5rem;
+            @include md() {
+                padding: 0 2rem;
+            }
+            &-link {
+                position: relative;
+                @include text(
+                    $font-bold,
+                    $fs-text-lv3,
+                    $tcl-white,
+                    0.025rem,
+                    uppercase
+                );
+                padding-top: 1rem;
+                padding-bottom: 0.5rem;
+                @include transition(all 0.3s);
+                &::before {
+                    @include pseudo();
+                    @include size(100%, 0.2rem);
+                    background-color: $color-primary;
+                    left: 50%;
+                    bottom: 0;
+                    @include transition(transform 0.3s $animation-cubic);
+                    @include transform(translateX(-50%) scaleX(0));
+                    @include transform-origin(right);
+                }
+                &:hover,
+                &.active {
+                    color: $color-primary;
+                    @include transition(all 0.3s);
+                    &::before {
+                        @include transition(transform 0.3s $animation-cubic);
+                        @include transform(translateX(-50%) scaleX(1));
+                        @include transform-origin(left);
+                    }
+                }
+            }
+        }
+        @include sm() {
+            display: none;
+        }
+    }
+
+    .right {
+        @include flexCenter();
+        .language {
+            position: relative;
+            cursor: pointer;
+            display: block;
+            &__current,
+            &__list-item {
+                @include text(
+                    $font-bold,
+                    $fs-text-lv3,
+                    $tcl-white,
+                    0.025rem,
+                    uppercase
+                );
+                padding: 1.3rem;
+                @include transition(all 0.3s);
+                &:hover {
+                    color: $color-primary;
+                    @include transition(all 0.3s);
+                }
+            }
+            &__current {
+                position: relative;
+                display: block;
+                &::after {
+                    @include pseudo();
+                    right: 0;
+                    @include positionCenter(top);
+                    border-left: 0.4rem solid transparent;
+                    border-right: 0.4rem solid transparent;
+                    border-top: 0.4rem solid $color-white;
+                    @include transition(all 0.3s);
+                }
+                &:hover::after {
+                    border-top-color: $color-primary;
+                    @include transition(all 0.3s);
+                }
+            }
+
+            &__list {
+                @include position(absolute, 140%, 0);
+                background-color: $color-black;
+                text-align: center;
+                @include transition(all 0.3s);
+                @include visible(true);
+                &-item {
+                    display: block;
+                    padding: 1.2rem 2rem;
+                }
+            }
+            &.active {
+                .language__list {
+                    top: 100%;
+                    @include transition(all 0.3s);
+                    @include visible(false);
+                }
+            }
+        }
+        .hamburger {
+            position: relative;
+            padding: 1rem;
+            @include size(5.2rem);
+            margin-left: 1.5rem;
+            @include flexCenter();
+            display: none;
+            @include sm() {
+                display: flex;
+            }
+            &__line {
+                position: relative;
+                @include size(100%, 0.2rem);
+                background-color: $color-white;
+                @include transition(all 0.3s);
+                &::before,
+                &::after {
+                    @include pseudo(null);
+                    @include size(100%, 0.2rem);
+                    background-color: $color-white;
+                    @include transition(all 0.3s);
+                    left: 0;
+                }
+                &::before {
+                    @include transform(translateY(-1rem));
+                }
+                &::after {
+                    @include transform(translateY(1rem));
+                }
+            }
+            &.active {
+                .hamburger__line {
+                    @include transform(translateX(-5.2rem));
+                    background-color: transparent;
+                    @include transition(all 0.3s);
+                    &::before {
+                        @include transform(
+                            rotate(45deg) translate(3.5rem, -3.5rem)
+                        );
+                        background-color: $color-primary;
+                    }
+                    &::after {
+                        @include transform(
+                            rotate(-45deg) translate(3.5rem, 3.5rem)
+                        );
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
