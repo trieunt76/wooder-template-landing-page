@@ -48,7 +48,7 @@
 }
 
 .block-text {
-    h3 {
+    .title {
         @include text(
             $font-bold,
             $fs-heading-lv2,
@@ -56,11 +56,14 @@
             0.07rem,
             uppercase
         );
+        @include xxs() {
+            font-size: 3.2rem;
+        }
         &.line {
             position: relative;
             &::before {
                 @include pseudo(block, unset);
-                @include size(100%, 0.3rem);
+                @include size(100%, 0.2rem);
                 background-color: $color-black;
                 right: calc(100% + 1.5rem);
                 @include positionCenter("top");
@@ -77,6 +80,24 @@
 
         @include xs() {
             margin: 1rem 0;
+        }
+    }
+}
+
+.section-title {
+    h2 {
+        @include text(
+            $font-bold,
+            $fs-heading-lv2,
+            $tcl-black,
+            0.5rem,
+            uppercase
+        );
+        @include sm() {
+            letter-spacing: 0.2rem;
+        }
+        @include xxs() {
+            font-size: 3.2rem;
         }
     }
 }

@@ -14,6 +14,12 @@ a {
 
 .padding-section {
     padding: var(--padding-section);
+    @include sm() {
+        --padding-section: 7rem 0;
+    }
+    @include xs() {
+        --padding-section: 6rem 0;
+    }
 }
 
 @include keyframes(fadeMouse) {
