@@ -1,0 +1,187 @@
+/* ----------------------- Slider ----------------------- */
+.slider {
+    position: relative;
+    &__list {
+        &-item {
+            position: relative;
+            @include size(100%, 100vh);
+            @include sm() {
+                height: 80vh;
+            }
+            @include xs() {
+                height: 70vh;
+            }
+            @include maxWidth(420px) {
+                height: 65vh;
+            }
+            .slider-content {
+                @include positionCenter("both");
+                z-index: 200;
+                h2 {
+                    @include text(
+                        $font-bold,
+                        $fs-heading-lv1,
+                        $tcl-primary,
+                        2rem,
+                        uppercase
+                    );
+                    margin-bottom: 4.8rem;
+                }
+                a {
+                    margin: auto;
+                }
+                @include sm() {
+                    top: 38%;
+                    h2 {
+                        font-size: 7.2rem;
+                        letter-spacing: 1rem;
+                        margin-bottom: 2rem;
+                    }
+                    a {
+                        padding: 1.4rem 3rem;
+                    }
+                }
+                @include xs() {
+                    h2 {
+                        font-size: 6.8rem;
+                    }
+                    a {
+                        padding: 1.4rem 2.8rem;
+                        img {
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+                @include maxWidth(440px) {
+                    h2 {
+                        font-size: 5rem;
+                    }
+                    a {
+                        padding: 1.2rem 2.2rem;
+                        font-size: 1rem;
+                    }
+                }
+                @include maxWidth(320px) {
+                    h2 {
+                        font-size: 4rem;
+                    }
+                }
+            }
+            .slider-image {
+                @include size(100%);
+                object-fit: cover;
+            }
+
+            &::before {
+                content: "";
+                @include position(absolute, 0, 0, 0, 0);
+                background-image: linear-gradient(
+                    to bottom,
+                    rgba($color-black, 0.4),
+                    rgba($color-black, 0)
+                );
+            }
+        }
+    }
+
+    &__bottom {
+        @include position(absolute, null, 0, 4rem, 0);
+        .container-fluid {
+            @include flex(null, space-between, flex-end);
+        }
+        .paging {
+            &__current {
+                @include text($font-bold, $fs-text-lv1, $tcl-primary);
+                position: relative;
+                @include flexCenter();
+                &::before {
+                    content: "";
+                    margin-right: 1.2rem;
+                    display: block;
+                    @include size(4.4rem, 0.4rem);
+                    background-color: $color-primary;
+                }
+                @include xs() {
+                    &::before {
+                        content: unset;
+                    }
+                }
+                @include xxs() {
+                    display: none;
+                }
+            }
+        }
+        .icon-scroll {
+            @include flexCenter();
+            flex-direction: column;
+            @include positionCenter("left");
+            img:first-child {
+                margin-bottom: 1.2rem;
+                @include animation(
+                    fadeMouse 1s 1s infinite alternate-reverse ease-in
+                );
+            }
+            img:last-child {
+                position: relative;
+                @include animation(
+                    fadeDown 1s 2s infinite alternate-reverse ease-in
+                );
+            }
+            @include maxWidth(320px) {
+                display: none;
+            }
+        }
+
+        .control {
+            @include flexCenter();
+            &__next,
+            &__previous {
+                position: relative;
+                border: 0.1rem solid $color-white;
+                padding: 1.5rem 1.7rem;
+                display: block;
+                &::before {
+                    content: "";
+                    @include position(absolute, 0, null, 0, null);
+                    background-color: $color-primary;
+                    @include transition(all 0.3s);
+                }
+            }
+
+            &__previous {
+                &::before {
+                    right: 0;
+                    left: 100%;
+                }
+                &:hover::before {
+                    left: 0;
+                    @include transition(all 0.3s);
+                }
+                img {
+                    @include transform(rotate(180deg));
+                }
+            }
+            &__next {
+                margin-left: -0.1rem;
+                &::before {
+                    right: 100%;
+                    left: 0;
+                }
+                &:hover::before {
+                    right: 0;
+                    @include transition(all 0.3s);
+                }
+                img {
+                    z-index: 1;
+                    position: relative;
+                }
+            }
+            @include xxs() {
+                display: none;
+            }
+        }
+    }
+    @include sm() {
+        margin-top: $height-header;
+    }
+}

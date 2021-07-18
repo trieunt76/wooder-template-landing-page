@@ -1,13 +1,16 @@
 .header {
     @include position(fixed, 0, null, null, 0);
     @include size(100%, $height-header);
-    background-color: $color-black;
+    z-index: 500;
+    background-color: transparent;
+    @include transition(all 0.3s);
     .container-fluid {
         height: inherit;
         @include flex(null, space-between, center);
     }
     .navbar {
         @include flexCenter();
+        @include positionCenter("left");
         &__item {
             padding: 0 3.5rem;
             @include md() {
@@ -46,6 +49,9 @@
                     }
                 }
             }
+        }
+        @include maxWidth(1350px) {
+            left: 55%;
         }
         @include sm() {
             display: none;
@@ -110,6 +116,9 @@
                     @include visible(false);
                 }
             }
+            @include maxWidth(320px) {
+                display: none;
+            }
         }
         .hamburger {
             position: relative;
@@ -161,5 +170,9 @@
                 }
             }
         }
+    }
+
+    @include sm() {
+        background-color: $color-black;
     }
 }
