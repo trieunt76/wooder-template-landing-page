@@ -12,6 +12,10 @@ a {
     display: none;
 }
 
+.padding-section {
+    padding: var(--padding-section);
+}
+
 @include keyframes(fadeMouse) {
     to {
         opacity: 0;

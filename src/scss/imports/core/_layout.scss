@@ -25,6 +25,7 @@ body {
     background: $color-white;
     @include text($font-body, $fs-body, $tcl-body, 0.025rem);
     @include custom-scroll();
+    --padding-section: 9.4rem 0;
     .container {
         width: 100%;
         padding-right: 15px;

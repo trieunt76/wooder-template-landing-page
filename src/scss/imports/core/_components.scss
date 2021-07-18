@@ -1,16 +1,15 @@
 .btn {
     position: relative;
     @include text($font-bold, $fs-text-lv4, $tcl-black, 0.2rem, uppercase);
+    @include flex(null, null, center);
+    @include transition(all 0.3s);
+    width: max-content;
     &--outline {
-        @include flexCenter();
         color: $tcl-white;
+        justify-content: center;
         border: 0.1rem solid $color-white;
-        width: max-content;
         padding: 1.5rem 4rem;
         z-index: 1;
-        img {
-            margin-left: 1.5rem;
-        }
         &::before {
             @include pseudo();
             left: 50%;
@@ -25,6 +24,59 @@
             left: 0;
             right: 0;
             @include transition(all 0.3s);
+        }
+        img {
+            margin-left: 1.5rem;
+        }
+    }
+    &--primary {
+        padding-bottom: 0.8rem;
+        &::before {
+            @include pseudo(block, null);
+            @include size(3.8rem, 0.2rem);
+            background: $color-primary;
+            @include position(absolute, null, null, 0, 0);
+        }
+        img {
+            margin-left: 1rem;
+        }
+        &:hover {
+            color: $color-primary;
+            @include transition(all 0.3s);
+        }
+    }
+}
+
+.block-text {
+    h3 {
+        @include text(
+            $font-bold,
+            $fs-heading-lv2,
+            $tcl-dark,
+            0.07rem,
+            uppercase
+        );
+        &.line {
+            position: relative;
+            &::before {
+                @include pseudo(block, unset);
+                @include size(100%, 0.3rem);
+                background-color: $color-black;
+                right: calc(100% + 1.5rem);
+                @include positionCenter("top");
+            }
+        }
+    }
+    p {
+        @include text($font-body, $fs-body, $tcl-body, 0.025rem, null, 2.2rem);
+        margin: 2.7rem 0;
+        @include over-text(3);
+        @include sm() {
+            margin: 2rem 0;
+        }
+
+        @include xs() {
+            margin: 1rem 0;
         }
     }
 }
