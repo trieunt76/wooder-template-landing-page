@@ -11,3 +11,23 @@ a {
 .hidden {
     display: none;
 }
+
+@include keyframes(fadeMouse) {
+    to {
+        opacity: 0;
+    }
+    from {
+        opacity: 1;
+    }
+}
+
+@include keyframes(fadeDown) {
+    to {
+        opacity: 1;
+        top: 0;
+    }
+    from {
+        opacity: 0;
+        top: 2rem;
+    }
+}

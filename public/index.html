@@ -1,74 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wooder | Template Landing Page</title>
-        <link rel="stylesheet" href="css/fonts.css" />
-        <link rel="stylesheet" href="css/style.min.css" />
-    </head>
 
-    <body>
-        <!-- --------------------- Header ---------------------- -->
-        <header class="header">
-            <div class="container-fluid">
-                <a href="#" class="logo">
-                    <h1 class="logo__text hidden">Wooder</h1>
-                    <img
-                        src="images/logo.png"
-                        alt="Wooder"
-                        class="logo__image"
-                    />
-                </a>
-                <ul class="navbar">
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">Home</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">Product</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">Videos</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">Intro</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">About</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">Gallery</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__item-link">News</a>
-                    </li>
-                </ul>
-                <div class="right">
-                    <div class="language">
-                        <span class="language__current">EN</span>
-                        <div class="language__list">
-                            <a href="#" class="language__list-item">VI</a>
-                            <a href="#" class="language__list-item">JP</a>
-                            <a href="#" class="language__list-item">EU</a>
-                        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wooder | Template Landing Page</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+</head>
+
+<body>
+    <!-- --------------------- Header ---------------------- -->
+    <header class="header">
+        <div class="container-fluid">
+            <a href="#" class="logo">
+                <h1 class="logo__text hidden">Wooder</h1>
+                <img src="images/logo.png" alt="Wooder" class="logo__image" />
+            </a>
+            <ul class="navbar">
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">Product</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">Videos</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">Intro</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">Gallery</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">News</a>
+                </li>
+            </ul>
+            <div class="right">
+                <div class="language">
+                    <span class="language__current">EN</span>
+                    <div class="language__list">
+                        <a href="#" class="language__list-item">VI</a>
+                        <a href="#" class="language__list-item">JP</a>
+                        <a href="#" class="language__list-item">EU</a>
                     </div>
-                    <div class="hamburger">
-                        <span class="hamburger__line"></span>
+                </div>
+                <div class="hamburger">
+                    <span class="hamburger__line"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ----------------- Menu Responsive ----------------- -->
+    <nav class="menu">
+        <a href="#" class="menu__link">Home</a>
+        <a href="#" class="menu__link">Product</a>
+        <a href="#" class="menu__link">Videos</a>
+        <a href="#" class="menu__link">Intro</a>
+        <a href="#" class="menu__link">About</a>
+        <a href="#" class="menu__link">Gallery</a>
+        <a href="#" class="menu__link">News</a>
+    </nav>
+
+    <!-- ---------------------- Main ----------------------- -->
+    <main class="homepage">
+        <!-- --------------------- Slider ---------------------- -->
+        <section class="slider">
+            <div class="slider__list">
+                <div class="slider__list-item">
+                    <div class="slider-content">
+                        <h2>Wooder</h2>
+                        <a href="#" class="btn btn--outline">Learn more
+                            <img src="images/icon-arrow.png" alt="Button Learn more" />
+                        </a>
+                    </div>
+                    <img src="images/slider-01.jpg" alt="Slider Wooder 01" class="slider-image" />
+                </div>
+            </div>
+            <div class="slider__bottom">
+                <div class="container-fluid">
+                    <div class="paging">
+                        <div class="paging__current">01</div>
+                    </div>
+                    <div class="icon-scroll">
+                        <img src="images/icon-mouse.png" alt="icon scroll">
+                        <img src="images/icon-arrow-down.png" alt="icon arrow down">
+                    </div>
+                    <div class="control">
+                        <a href="#" class="control__previous">
+                            <img src="images/icon-arrow.png" alt="Previous">
+                        </a>
+                        <a href="#" class="control__next">
+                            <img src="images/icon-arrow.png" alt="Next">
+                        </a>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
+    </main>
+</body>
 
-        <!-- ----------------- Menu Responsive ----------------- -->
-        <nav class="menu">
-            <a href="#" class="menu__link">Home</a>
-            <a href="#" class="menu__link">Product</a>
-            <a href="#" class="menu__link">Videos</a>
-            <a href="#" class="menu__link">Intro</a>
-            <a href="#" class="menu__link">About</a>
-            <a href="#" class="menu__link">Gallery</a>
-            <a href="#" class="menu__link">News</a>
-        </nav>
-    </body>
 </html>
