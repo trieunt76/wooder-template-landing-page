@@ -428,3 +428,102 @@
         }
     }
 }
+
+/* ------------------------ About ----------------------- */
+.about {
+    .container {
+        @include flex(row-reverse, center, center);
+        @include xs() {
+            flex-direction: column;
+        }
+    }
+    &__content {
+        padding-left: 7rem;
+        .title.line {
+            &::before {
+                width: 8.2rem;
+                right: calc(100% + 2.5rem);
+                @include xs() {
+                    content: unset;
+                }
+            }
+        }
+        @include xs() {
+            padding-left: unset;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            a {
+                margin: auto;
+            }
+        }
+    }
+    &__img {
+        flex-shrink: 0;
+        @include sm() {
+            width: 50%;
+        }
+        @include xs() {
+            width: 100%;
+        }
+    }
+}
+
+/* ----------------------- Galley ----------------------- */
+.gallery {
+    background-color: $color-dark-v1;
+    .section-title {
+        margin-bottom: 4.7rem;
+        h2 {
+            position: relative;
+            padding-bottom: 1.8rem;
+            color: $tcl-white;
+        }
+        p {
+            max-width: 45rem;
+            color: $tcl-white;
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 1rem;
+        @include xs() {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        &-item {
+            position: relative;
+            overflow: hidden;
+            &:nth-child(2) {
+                grid-row: 1 / span 2;
+            }
+            &:nth-child(4) {
+                grid-column: 1 / span 1;
+                grid-row: 2 / span 1;
+            }
+            a {
+                img {
+                    @include size(100%);
+                    object-fit: cover;
+                    filter: grayscale(100%);
+                    -webkit-filter: grayscale(100%);
+                    -moz-filter: grayscale(100%);
+                    @include transition(all 0.25s);
+                }
+            }
+            &:hover {
+                a {
+                    img {
+                        filter: grayscale(0%);
+                        -webkit-filter: grayscale(0%);
+                        -moz-filter: grayscale(0%);
+                        @include transform(scale(1.1));
+                        @include transition(all 0.25s);
+                    }
+                }
+            }
+        }
+    }
+}
