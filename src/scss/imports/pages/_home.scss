@@ -475,7 +475,6 @@
         margin-bottom: 4.7rem;
         h2 {
             position: relative;
-            padding-bottom: 1.8rem;
             color: $tcl-white;
         }
         p {
@@ -525,5 +524,114 @@
                 }
             }
         }
+    }
+}
+
+/* ------------------------ News ------------------------ */
+.news {
+    &__title {
+        p {
+            max-width: 45rem;
+        }
+    }
+    &__list {
+        @include flex(null, space-between);
+        margin-left: -2.5rem;
+        margin-top: 5rem;
+        @include xs() {
+            flex-direction: column;
+            margin-left: unset;
+        }
+        &-item {
+            width: calc((100% / 3));
+            margin-left: 2.5rem;
+            @include xs() {
+                width: 100%;
+                margin-bottom: 2.6rem;
+                margin-left: unset;
+            }
+            .thumbnail {
+                display: block;
+                position: relative;
+                padding-bottom: calc((9 / 16) * 100%);
+                height: 0;
+                margin-bottom: 2.5rem;
+                img {
+                    position: absolute;
+                    @include size(100%);
+                    left: 0;
+                    top: 0;
+                    object-fit: cover;
+                }
+                @include sm() {
+                    margin-bottom: 1.5rem;
+                }
+            }
+            .title {
+                height: 8rem;
+                position: relative;
+                @include text(
+                    $font-bold,
+                    $fs-heading-lv3,
+                    $tcl-black,
+                    0.02rem,
+                    uppercase,
+                    2.4rem
+                );
+                padding-top: 2.5rem;
+                a {
+                    color: inherit;
+                    @include over-text(2);
+                }
+                &::before {
+                    @include pseudo();
+                    @include size(8.4rem, 0.3rem);
+                    background-color: $color-primary;
+                    left: 0;
+                    top: 0;
+                }
+                @include sm() {
+                    padding-top: 1.5rem;
+                    &::before {
+                        @include size(6.4rem, 0.3rem);
+                    }
+                }
+
+                @include sm() {
+                    height: unset;
+                    padding-bottom: 1rem;
+                    &::before {
+                        @include size(8.4rem, 0.3rem);
+                    }
+                    a {
+                        @include over-text(unset);
+                    }
+                }
+            }
+            p {
+                @include text(
+                    $font-body,
+                    $fs-text-lv3,
+                    null,
+                    0.025rem,
+                    null,
+                    2rem
+                );
+                @include over-text(3);
+                @include sm() {
+                    @include over-text(unset);
+                }
+            }
+        }
+    }
+}
+
+/* --------------------- Slider Drag -------------------- */
+.slider-list {
+    display: flex;
+    margin-bottom: 8rem;
+    overflow: hidden;
+    &__item {
+        height: 33.5rem;
     }
 }

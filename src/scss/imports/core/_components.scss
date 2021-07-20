@@ -93,11 +93,15 @@
             0.5rem,
             uppercase
         );
+        padding-bottom: 1.8rem;
         @include sm() {
             letter-spacing: 0.2rem;
         }
         @include xxs() {
             font-size: 3.2rem;
         }
+    }
+    p {
+        line-height: 2.2rem;
     }
 }

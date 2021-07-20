@@ -1,0 +1,32 @@
+.footer {
+    padding: 2rem 0;
+    background-color: $color-dark-v2;
+    .container {
+        position: relative;
+        @include flex(null, space-between, center);
+    }
+    &__item {
+        span,
+        a {
+            @include text($fs-body, 1.4rem, $tcl-light, 0.05rem, capitalize);
+        }
+        span {
+            @include xs() {
+                display: none;
+            }
+        }
+        .logo {
+            @include positionCenter("both");
+            @include xs() {
+                @include positionCenter("top");
+                left: 0;
+            }
+            @include xs() {
+                left: 1.5rem;
+            }
+        }
+        a {
+            text-transform: uppercase;
+        }
+    }
+}
