@@ -1,9 +1,8 @@
 .menu {
-    @include position(fixed, $height-header, 0, 0, 0);
+    @include position(fixed, $height-header, 0, 0, -100%);
     @include flexCenter();
     flex-direction: column;
     background-color: $color-black;
-    left: -100%;
     @include transition(all 0.3s $animation-cubic);
     @include visible(true);
     z-index: 600;
