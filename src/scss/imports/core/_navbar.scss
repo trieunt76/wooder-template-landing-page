@@ -3,7 +3,7 @@
     @include flexCenter();
     flex-direction: column;
     background-color: $color-black;
-    @include transform(translateX(-100%));
+    left: -100%;
     @include transition(all 0.3s $animation-cubic);
     @include visible(true);
     z-index: 600;
@@ -22,7 +22,7 @@
 
 .open-menu {
     .menu {
-        @include transform(translateX(0));
+        left: 0;
         @include transition(all 0.3s $animation-cubic);
         @include visible();
     }
